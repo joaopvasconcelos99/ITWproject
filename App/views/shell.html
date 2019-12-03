@@ -1,0 +1,31 @@
+﻿<nav class="navbar fixed-top navbar-expand-md navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#"><img src="/images/pokemon-icon.png" style="width:24px;" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto" data-bind="foreach: router.navigationModel">
+                <li class="nav-item" data-bind="css: { active: isActive }">
+                    <a class="nav-link" data-bind="attr: { href: hash }, text: title"></a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0 d-none d-lg-block" data-bind="submit:search">
+                <div class="form-group btn-group-sm">
+                    <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="page-host container" data-bind="router"></div>
+
+<nav class="navbar fixed-bottom navbar-light bg-light" role="navigation">
+    <div class="container">
+        <div class="navbar-text small">&copy;jsp (2019) - Pokémon ITW Application - Version 1.0</div>
+        <div class="navbar-right navbar-text small d-none d-lg-block"><a href="http://www.ua.pt" title="Universidade de Aveiro">Universidade de Aveiro</a></div>
+    </div>
+</nav>

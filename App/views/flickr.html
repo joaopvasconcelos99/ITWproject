@@ -1,0 +1,12 @@
+﻿<section>
+    <div class="border-bottom pt-4 pb-2 mb-3">
+        <h2 data-bind="text:displayName"></h2>
+    </div>
+    <div class="row" data-bind="foreach: images">
+        <div class="col-sm-6 col-md-3">
+            <a href="#" data-bind="click:$parent.select">
+                <img class="img-thumbnail mb-2" data-bind="attr: { src: media.m }" />
+            </a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,17 @@
+﻿<section>
+    <div class="border-bottom pt-4 pb-2 mb-3">
+        <h2 data-bind="text:displayName"></h2>
+    </div>
+    <p data-bind="html:description" class="lead"></p>
+    <h3>Features</h3>
+    <ul data-bind="foreach: features">
+        <li data-bind="text:$data"></li>
+    </ul>
+    <div class="bs-callout bs-callout-info">
+        <h4>Read Me Please</h4>
+        <p>
+            For information about Pokemóns and general documentation please visit <a href="https://m.bulbapedia.bulbagarden.net/wiki/Main_Page" target="_blank">Bulbapedia!</a>.<br />
+            The current Pokemón database was based on <a href="https://pokeapi.co/" target="_blank">PokéAPI</a> - The RESTful Pokémon API
+        </p>
+    </div>
+</section>

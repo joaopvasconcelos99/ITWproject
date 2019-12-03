@@ -1,0 +1,79 @@
+﻿<section>
+    <div class="border-bottom pt-4 pb-2 mb-3">
+        <h2 data-bind="text:displayName"></h2>
+    </div>
+    <dl data-bind="with: record" class="row">
+        <dt class="form-control-plaintext col-sm-2">Id</dt>
+        <dd class="form-control-plaintext col-sm-10" data-bind="text:Id"></dd>
+        <dt class="form-control-plaintext col-sm-2">Name</dt>
+        <dd class="form-control-plaintext col-sm-10">
+            <div data-bind="text:Name.toUpperCase()"></div>
+            <!-- ko if: flavorText.length > 0 -->
+            <span class="blockquote" data-bind="text: flavorText[0].Text"></span>
+            <!-- /ko -->
+        </dd>
+        <dt class="form-control-plaintext col-sm-2"></dt>
+        <dd class="form-control-plaintext col-sm-10"><hr /></dd>
+        <dt class="form-control-plaintext col-sm-2">Base Happiness</dt>
+        <dd class="form-control-plaintext col-sm-10" data-bind="text:BaseHappiness"></dd>
+        <dt class="form-control-plaintext col-sm-2">Capture Rate</dt>
+        <dd class="form-control-plaintext col-sm-10" data-bind="text:CaptureRate"></dd>
+        <dt class="form-control-plaintext col-sm-2">Color</dt>
+        <dd class="form-control-plaintext col-sm-10" data-bind="text:Color"></dd>
+        <dt class="form-control-plaintext col-sm-2">Evolves From Specie</dt>
+        <dd class="form-control-plaintext col-sm-10" data-bind="text:EvolvesFromSpecie.toUpperCase()"></dd>
+        <dt class="form-control-plaintext col-sm-2">Female To Male Rate</dt>
+        <dd class="form-control-plaintext col-sm-10" data-bind="text:FemaleToMaleRate+'%'"></dd>
+        <dt class="form-control-plaintext col-sm-2">Forms Are Switchable</dt>
+        <dd class="form-control-plaintext col-sm-10" data-bind="text:FormsAreSwitchable"></dd>
+        <dt class="form-control-plaintext col-sm-2">Genera</dt>
+        <dd class="form-control-plaintext col-sm-10" data-bind="text:Genera"></dd>
+        <dt class="form-control-plaintext col-sm-2">Generation</dt>
+        <dd class="form-control-plaintext col-sm-10" data-bind="text:Generation"></dd>
+        <dt class="form-control-plaintext col-sm-2">Growth Rate</dt>
+        <dd class="form-control-plaintext col-sm-10" data-bind="text:GrowthRate"></dd>
+        <dt class="form-control-plaintext col-sm-2">Has Gender Differences</dt>
+        <dd class="form-control-plaintext col-sm-10" data-bind="text:HasGenderDifferences"></dd>
+        <dt class="form-control-plaintext col-sm-2">Hatch Counter</dt>
+        <dd class="form-control-plaintext col-sm-10" data-bind="text:HatchCounter"></dd>
+        <dt class="form-control-plaintext col-sm-2">Is Baby</dt>
+        <dd class="form-control-plaintext col-sm-10" data-bind="text:IsBaby"></dd>
+        <dt class="form-control-plaintext col-sm-2">Order</dt>
+        <dd class="form-control-plaintext col-sm-10" data-bind="text:Order"></dd>
+        <dt class="form-control-plaintext col-sm-2">Shape</dt>
+        <dd class="form-control-plaintext col-sm-10" data-bind="text:Shape"></dd>
+        <!-- ko if: Description.length > 0 -->
+        <!-- ko foreach: Description.DTO_Description -->
+        <dt class="form-control-plaintext col-sm-2">Description</dt>
+        <dd class="form-control-plaintext col-sm-10" data-bind="text:Text"></dd>
+        <!-- /ko -->
+        <!-- /ko -->
+        <!-- ko if: eggGroup.length > 0 -->
+        <dt class="form-control-plaintext col-sm-2">Egg Group(s)</dt>
+        <dd class="form-control-plaintext col-sm-10">
+            <!-- ko foreach: eggGroup -->
+            <span class="img-thumbnail px-3 py-1 text-white border-secondary" data-bind="style : { 'background-color': Color }, text: Name.toUpperCase()"></span>
+            <!-- /ko -->
+        </dd>
+        <!-- /ko -->
+        <!-- ko if: palParkEncounter.length > 0 -->
+        <dt class="form-control-plaintext col-sm-2">Park Encounter(s)</dt>
+        <dd class="form-control-plaintext col-sm-10">
+            <!-- ko foreach: palParkEncounter -->
+            <span class="img-thumbnail px-3 py-1 border-secondary" data-bind="text: Name.toUpperCase() + ' [BaseScore: ' + BaseScore + ', Rate: '+ Rate + ']'"></span>
+            <!-- /ko -->
+        </dd>
+        <!-- /ko -->
+        <dt class="form-control-plaintext col-sm-2">Pokemón(s)</dt>
+        <dd class="form-control-plaintext col-sm-10 text-left">
+            <!-- ko foreach: pokemon  -->
+            <span class="d-inline-block img-thumbnail text-center mb-2">
+                <img class="m-2" data-bind="attr : { src : 'http://192.168.160.58/pokemons/Imagens/' + Id + '.png', style : 'width: 256px;', title: Name}" onerror="this.src = '/images/pokemon-icon.png'; this.style.width = '128px';" />
+                <a class="btn btn-outline-secondary d-block" data-bind="text: Name.toUpperCase(), attr:{ href: '#pokemonDetails/' + Id}"></a>
+            </span>
+            <!-- /ko -->
+        </dd>
+    </dl>
+    <hr />
+    <a class="btn btn-outline-secondary" href="#species"><i class=" fa fa-arrow-circle-o-left"></i> Back to Species List</a>
+</section>
