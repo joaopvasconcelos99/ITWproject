@@ -12,10 +12,12 @@
                 { route: 'species', title: 'Species', moduleId: 'viewmodels/species', nav: true },
                 { route: 'species(/:id)', title: 'Species', moduleId: 'viewmodels/species', hash: '#species', nav: false },
                 { route: 'specieDetails(/:id)', title: 'Specie Details', moduleId: 'viewmodels/specieDetails', hash: '#specieDetails', nav: false },
-                { route: 'pokemons', title:'Pokemóns', moduleId: 'viewmodels/pokemons', nav: true },
+                { route: 'pokemons', title: 'Pokemóns', moduleId: 'viewmodels/pokemons', nav: true },
+                { route: 'types', title: 'Types', moduleId: 'viewmodels/types', nav: true },
                 { route: 'pokemonDetails(/:id)', title: 'Pokemón Details', moduleId: 'viewmodels/pokemonDetails', hash: '#pokemonDetails', nav: false },
                 { route: 'flickr', moduleId: 'viewmodels/flickr', nav: true },
-                { route: 'search(/:id)', title: 'Pesquisar', moduleId: 'viewmodels/search', hash: '#search', nav: false },
+                { route: 'search(/:id)', title: 'Pesquisar', moduleId: 'viewmodels/search', hash: '#search', nav: false }
+                
 
             ]).buildNavigationModel();
             
