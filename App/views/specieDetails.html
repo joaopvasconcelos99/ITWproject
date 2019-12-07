@@ -12,6 +12,16 @@
             <span class="blockquote" data-bind="text: flavorText[0].Text"></span>
             <!-- /ko -->
         </dd>
+        <dt class="form-control-plaintext col-sm-2">Pokemón(s)</dt>
+        <dd class="container2 form-control-plaintext col-sm-10 text-left">
+            <span class="d-inline-block img-thumbnail text-center mb-2">
+                <img class="image m-2" data-bind="attr : { src : 'http://192.168.160.58/pokemons/Imagens/' + Id + '.png', style : 'width: 256px;', title: Name}" onerror="this.src = '/images/pokemon-icon.png'; this.style.width = '128px';" />
+                <a class="btn btn-outline-secondary d-block" data-bind="text: Name.toUpperCase(), attr:{ href: '#pokemonDetails/' + Id}"></a>
+            </span>
+            <div class="overlay">
+                <div class="text" data-bind="text:Name.toUpperCase()"></div>
+            </div>
+        </dd>
         <dt class="form-control-plaintext col-sm-2"></dt>
         <dd class="form-control-plaintext col-sm-10"><hr /></dd>
         <dt class="form-control-plaintext col-sm-2">Base Happiness</dt>
@@ -64,16 +74,52 @@
             <!-- /ko -->
         </dd>
         <!-- /ko -->
-        <dt class="form-control-plaintext col-sm-2">Pokemón(s)</dt>
-        <dd class="form-control-plaintext col-sm-10 text-left">
-            <!-- ko foreach: pokemon  -->
-            <span class="d-inline-block img-thumbnail text-center mb-2">
-                <img class="m-2" data-bind="attr : { src : 'http://192.168.160.58/pokemons/Imagens/' + Id + '.png', style : 'width: 256px;', title: Name}" onerror="this.src = '/images/pokemon-icon.png'; this.style.width = '128px';" />
-                <a class="btn btn-outline-secondary d-block" data-bind="text: Name.toUpperCase(), attr:{ href: '#pokemonDetails/' + Id}"></a>
-            </span>
-            <!-- /ko -->
-        </dd>
+
     </dl>
     <hr />
     <a class="btn btn-outline-secondary" href="#species"><i class=" fa fa-arrow-circle-o-left"></i> Back to Species List</a>
 </section>
+
+
+
+<style>
+    .container2 {
+        position: relative;
+        width: 100%;
+    }
+
+    .image {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 33%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: #008CBA;
+    }
+
+    .container2:hover .overlay {
+        opacity: 1;
+    }
+
+    .text {
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+</style>
