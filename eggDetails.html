@@ -1,0 +1,26 @@
+<section>
+    <div class="border-bottom pt-4 pb-2 mb-3">
+        <h2 data-bind="text:displayName"></h2>
+    </div>
+    <!-- ko if:records().length > 0 -->
+    <!-- /ko -->
+    <div class="clearfix"></div>
+    <table class="table table-striped table-sm" id="myTable">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+        </tr>
+        </thead>
+        <!-- ko with: records -->
+        <tbody data-bind="foreach: Species">
+        <tr>
+            <td data-bind="text: Name"></td>
+        </tr>
+        </tbody>
+        <!-- /ko -->
+    </table>
+    <a class="btn btn-outline-secondary" href="#EggGroups"><i class=" fa fa-arrow-circle-o-left"></i> Back to Egg Groups List</a>
+</section>
+
+
+
